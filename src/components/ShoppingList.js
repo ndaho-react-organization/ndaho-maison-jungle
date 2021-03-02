@@ -18,8 +18,7 @@ function ShoppingList() {
 			</ul>
 			<ul className='lmj-plant-list'>
 				{plantList.map(({ id, cover, name, water, light }) => (
-					<PlantItem
-						id={id}
+					<PlantItem key={id}
 						cover={cover}
 						name={name}
 						water={water}
