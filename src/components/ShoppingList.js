@@ -10,15 +10,15 @@ function ShoppingList() {
 	)
 
 	return (
-		<div>
+		<div className="col-md-9 col-xs-12 ml-2">
 			<ul>
 				{categories.map((cat) => (
 					<li key={cat}>{cat}</li>
 				))}
 			</ul>
-			<ul className='lmj-plant-list'>
+			<ul className='row no-gutters list-unstyled'>
 				{plantList.map(({ id, cover, name, water, light }) => (
-					<PlantItem key={id}
+					<PlantItem  key={id}
 						cover={cover}
 						name={name}
 						water={water}

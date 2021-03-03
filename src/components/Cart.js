@@ -7,7 +7,7 @@ function Cart() {
     const [isOpen, setIsOpen] = useState(false)
 
     return isOpen ? (
-        <div className='lmj-cart'>
+        <div className='lmj-cart col'>
             <button onClick={() => setIsOpen(false)}>Fermer</button>
             <h2>Panier</h2>
             <div>
