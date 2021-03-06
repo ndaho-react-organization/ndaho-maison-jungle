@@ -12,9 +12,11 @@ function ShoppingList({ cart, updateCart }) {
 	function addToCart(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
 		if (currentPlantSaved) {
+			//si il existe
 			const cartFilteredCurrentPlant = cart.filter(
 				(plant) => plant.name !== name
 			)
+			
 			updateCart([
 				...cartFilteredCurrentPlant,
 				{ name, price, amount: currentPlantSaved.amount + 1 }
