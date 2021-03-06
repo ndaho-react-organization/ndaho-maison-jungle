@@ -6,15 +6,12 @@ import { useState } from 'react'
 
 function ShoppingList({ cart, updateCart }) {
 
-	const [selectedCategory, handleSearchCategorie] = useState("")
+	const [activeCategory, handleSearchCategorie] = useState("")
 
 	const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category), []
 	)
-
-	const resultPlaylist = selectedCategory === "" ?
-		plantList : plantList.filter((plant) => plant.category == selectedCategory)
 
 	function addToCart(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
@@ -36,20 +33,28 @@ function ShoppingList({ cart, updateCart }) {
 	return (
 		<div className='lmj-shopping-list'>
 
-			<Categories cats={categories} selectedCat={selectedCategory} searchCategorie={handleSearchCategorie}></Categories>
+			<Categories
+				cats={categories}
+				selectedCat={activeCategory}
+				searchCategorie={handleSearchCategorie}
+
+			/>
+
 			<ul className='lmj-plant-list'>
-				{resultPlaylist.map(({ id, cover, name, water, light, price }) => (
-					<div key={id}>
-						<PlantItem
-							cover={cover}
-							name={name}
-							water={water}
-							light={light}
-							price={price}
-						/>
-						<button onClick={() => addToCart(name, price)}>Ajouter</button>
-					</div>
-				))}
+				{plantList.map(({ id, cover, name, water, light, price, category }) =>
+					!activeCategory || activeCategory === category ? (
+						<div key={id}>
+							<PlantItem
+								cover={cover}
+								name={name}
+								water={water}
+								light={light}
+								price={price}
+							/>
+							<button onClick={() => addToCart(name, price)}>Ajouter</button>
+						</div>
+					) : null
+				)}
 			</ul>
 		</div>
 	)
