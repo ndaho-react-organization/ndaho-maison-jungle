@@ -10,7 +10,7 @@ function Cart({ cart, updateCart }) {
 		0
 	)
 
-		//on va appeler ça toujours quand le composant est re-render
+	//on va appeler ça toujours quand le composant est re-render
 	// useEffect(() => {
 	// 	document.title = `Ndaho Maison de Jungle`
 	// })
@@ -21,14 +21,14 @@ function Cart({ cart, updateCart }) {
 	}, [])
 
 	//on va appeler ça pour la premiere fois et quand le total change
-	// useEffect(() => {
-	// 	document.title = `LMJ: ${total}€ d'achats`
-	// }, [total])
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`
+	}, [total])
 
 	//on va appeler ça uniquement quand le composant est demonté( avec un return)
-	useEffect(() => {
-		return console.log(`Notre cart est demonté/caché`);
-	})
+	// useEffect(() => {
+	// 	return console.log(`Notre cart est demonté/caché`);
+	// })
 
 
 	return isOpen ? (
