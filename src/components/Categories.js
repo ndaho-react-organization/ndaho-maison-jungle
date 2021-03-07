@@ -1,3 +1,5 @@
+import './Categories.css'
+
 const Categories = ({ cats, selectedCat, searchCategorie }) => {
 
     return (
