@@ -1,4 +1,4 @@
-import './Categories.css'
+import '../styles/Categories.css'
 
 const Categories = ({ cats, selectedCat, searchCategorie }) => {
 
