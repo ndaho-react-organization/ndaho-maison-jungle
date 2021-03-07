@@ -1,10 +1,12 @@
 const Categories = ({ cats, selectedCat, searchCategorie }) => {
 
     return (
-        <>
+        <div className='lmj-categories'>
             <select id="cats"
                 onChange={(e) => searchCategorie(e.target.value)}
-                value={selectedCat}>
+                value={selectedCat}
+                className='lmj-categories-select'
+            >
                 <option value="">selectionez votre categorie</option>
                 {
                     cats.map((cat) => (
@@ -13,7 +15,7 @@ const Categories = ({ cats, selectedCat, searchCategorie }) => {
                 }
             </select>
             <button onClick={() => searchCategorie("")}>Réinitialiser</button>
-        </>
+        </div>
     );
 }
 
