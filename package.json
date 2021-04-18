@@ -1,7 +1,7 @@
 {
   "name": "ndaho-maison-jungle",
   "version": "0.1.0",
-  "homepage": "http://ndayiho.github.io/ndaho-maison-jungle",
+  "homepage": "https://ndaho-react-organization.github.io/ndaho-maison-jungle",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
